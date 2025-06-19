@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  sql-server-db:
+    # Sử dụng image chính thức của Microsoft SQL Server 2022
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: mssql_server_db
+    restart: unless-stopped
+    
+    # Biến môi trường để cấu hình SQL Server
+    environment:
+      # Chấp nhận điều khoản sử dụng (BẮT BUỘC)
+      - ACCEPT_EULA=Y
+      
+      # Đặt mật khẩu cho tài khoản quản trị 'sa'
+      # THAY THẾ BẰNG MỘT MẬT KHẨU MẠNH CỦA BẠN!
+      - MSSQL_SA_PASSWORD=LeTh@ng@**4
+
+      # Có thể chọn phiên bản, ví dụ: Express, Standard, Enterprise.
+      # Developer là phiên bản miễn phí và đầy đủ tính năng.
+      - MSSQL_PID=Developer
+
+    # Ánh xạ cổng 1433 của máy thật vào cổng 1433 của container
+    ports:
+      - "1433:1433"
+      
+    # Gắn volume để dữ liệu không bị mất khi container bị xóa
+    volumes:
+      - sql_server_data:/var/opt/mssql
+
+# Khai báo volume do Docker quản lý
+volumes:
+  sql_server_data:
