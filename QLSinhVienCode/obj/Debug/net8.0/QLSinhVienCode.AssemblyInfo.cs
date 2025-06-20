@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QLSinhVienCode")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80c283bcb1096313cfeb336461df5e3711d37f79")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+877c48b1568b8502e3c853cd83354a557c997f7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("QLSinhVienCode")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QLSinhVienCode")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

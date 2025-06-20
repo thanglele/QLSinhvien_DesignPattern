@@ -1,81 +1,210 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - QLSV TLU</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal {
+            display: none;
+        }
+
+            .modal.active {
+                display: flex;
+            }
+
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+        .tab.active {
+            border-bottom-color: #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
-    <div class="p-6">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold" id="welcome-admin">Chào mừng Admin!</h1>
-            <button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Đăng xuất</button>
+    <!-- Header -->
+    <header class="p-4 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800" id="welcome-admin">Admin Dashboard</h1>
+            <button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Đăng xuất</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <!-- Tabs Navigation -->
+        <div class="border-b border-gray-200 mb-6">
+            <nav class="-mb-px flex gap-8" id="admin-tabs">
+                <a href="#" class="tab active py-4 px-1 border-b-2 border-transparent text-lg" data-target="sv">Quản lý Sinh Viên</a>
+                <a href="#" class="tab py-4 px-1 border-b-2 border-transparent text-lg" data-target="gv">Quản lý Giảng Viên</a>
+                <a href="#" class="tab py-4 px-1 border-b-2 border-transparent text-lg" data-target="mh">Quản lý Môn Học</a>
+            </nav>
         </div>
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h2 class="text-xl font-semibold mb-4">Danh sách Sinh viên (Dữ liệu được bảo vệ)</h2>
-            <table class="min-w-full bg-white">
-                <thead class="bg-gray-200">
-                    <tr>
-                        <th class="py-2 px-4">Mã SV</th>
-                        <th class="py-2 px-4">Họ Tên</th>
-                        <th class="py-2 px-4">Lớp</th>
-                    </tr>
-                </thead>
-                <tbody id="admin-data-table">
-                    <!-- Dữ liệu sẽ được tải vào đây -->
-                </tbody>
-            </table>
+        <!-- Sinh Viên Content -->
+        <div id="sv" class="tab-content active bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Danh sách Sinh viên</h2>
+                <button onclick="openModal('sv-modal', 'add')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200">Thêm Sinh viên</button>
+            </div>
+            <div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã SV</th><th>Họ Tên</th><th>Lớp</th><th>Ngành</th><th>Hành động</th></tr></thead><tbody id="sv-table"></tbody></table></div>
         </div>
+
+        <!-- Giảng Viên Content -->
+        <div id="gv" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4"><h2 class="text-2xl font-semibold">Danh sách Giảng viên</h2><button onclick="openModal('gv-modal', 'add')" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg">Thêm Giảng viên</button></div>
+            <div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã GV</th><th>Họ Tên</th><th>Bộ Môn</th><th>Email</th><th>Hành động</th></tr></thead><tbody id="gv-table"></tbody></table></div>
+        </div>
+
+        <!-- Môn Học Content -->
+        <div id="mh" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold">Chức năng đang phát triển</h2>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div id="sv-modal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md"><h3 id="sv-modal-title" class="text-2xl mb-6 font-semibold"></h3><form id="sv-form"><input type="hidden" id="sv-id-hidden"><div class="grid grid-cols-2 gap-4"><div class="col-span-2"><label>Mã SV</label><input id="MaSV" name="MaSV" class="w-full border p-2 rounded mt-1" required></div><div class="col-span-2"><label>Họ Tên</label><input name="HoTen" class="w-full border p-2 rounded mt-1" required></div><div id="sv-password-field" class="col-span-2"><label>Mật khẩu</label><input name="MatKhau" type="password" class="w-full border p-2 rounded mt-1"></div><div><label>Lớp</label><input name="Lop" class="w-full border p-2 rounded mt-1"></div><div><label>Ngành</label><input name="Nganh" class="w-full border p-2 rounded mt-1"></div></div><div class="flex justify-end gap-4 mt-6"><button type="button" onclick="closeModal('sv-modal')" class="bg-gray-300 py-2 px-4 rounded-lg">Hủy</button><button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg">Lưu</button></div></form></div>
+    </div>
+    <div id="gv-modal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md"><h3 id="gv-modal-title" class="text-2xl mb-6 font-semibold"></h3><form id="gv-form"><input type="hidden" id="gv-id-hidden"><div class="grid grid-cols-2 gap-4"><div class="col-span-2"><label>Mã GV</label><input id="MaGV" name="MaGV" class="w-full border p-2 rounded mt-1" required></div><div class="col-span-2"><label>Họ Tên</label><input name="HoTen" class="w-full border p-2 rounded mt-1" required></div><div id="gv-password-field" class="col-span-2"><label>Mật khẩu</label><input name="MatKhau" type="password" class="w-full border p-2 rounded mt-1"></div><div class="col-span-2"><label>Bộ Môn</label><input name="BoMon" class="w-full border p-2 rounded mt-1"></div><div class="col-span-2"><label>Email</label><input name="Email" type="email" class="w-full border p-2 rounded mt-1"></div></div><div class="flex justify-end gap-4 mt-6"><button type="button" onclick="closeModal('gv-modal')" class="bg-gray-300 py-2 px-4 rounded-lg">Hủy</button><button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg">Lưu</button></div></form></div>
     </div>
 
     <script>
-        // --- Logic xác thực khi tải trang ---
-        const userRole = sessionStorage.getItem('userRole');
+        const API_BASE = '/api/admin';
         const authToken = sessionStorage.getItem('authToken');
+        let currentEditId = null;
 
-        // Sửa lỗi: Kiểm tra không phân biệt chữ hoa/thường và kiểm tra token
-        if (!authToken || !userRole || userRole.toLowerCase() !== 'admin') {
-            window.location.href = '/index.html';
-        } else {
-            document.getElementById('welcome-admin').textContent = 'Chào mừng Admin: ' + (sessionStorage.getItem('userName') || '');
-            fetchAdminData();
+        // --- Auth & Init ---
+        if (!authToken || sessionStorage.getItem('userRole')?.toLowerCase() !== 'admin') logout();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('welcome-admin').textContent = 'Chào mừng Admin: ' + sessionStorage.getItem('userName');
+            setupTabs('admin-tabs');
+            loadData('sinhvien', 'sv-table', renderSinhVienRow);
+            setupForm('sv-form', 'sv-modal', 'sinhvien', () => loadData('sinhvien', 'sv-table', renderSinhVienRow));
+            setupForm('gv-form', 'gv-modal', 'giangvien', () => loadData('giangvien', 'gv-table', renderGiangVienRow));
+        });
+
+        // --- UI Logic ---
+        function setupTabs(containerId) {
+            const tabsContainer = document.getElementById(containerId);
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    tabsContainer.querySelector('.active').classList.remove('active');
+                    e.target.classList.add('active');
+
+                    document.querySelector('.tab-content.active').classList.remove('active');
+                    const targetId = e.target.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+
+                    if (targetId === 'sv') loadData('sinhvien', 'sv-table', renderSinhVienRow);
+                    if (targetId === 'gv') loadData('giangvien', 'gv-table', renderGiangVienRow);
+                }
+            });
+        }
+        function openModal(modalId, mode, data = null) {
+            const modal = document.getElementById(modalId);
+            const form = modal.querySelector('form');
+            form.reset();
+            form.dataset.mode = mode;
+
+            const title = modal.querySelector('h3');
+            const idInput = form.querySelector('input[type=hidden]');
+            const codeInput = form.querySelector('input[name^=Ma]');
+            const passwordField = modal.querySelector('div[id*=-password-field]');
+
+            if (mode === 'add') {
+                title.textContent = modalId === 'sv-modal' ? 'Thêm Sinh viên' : 'Thêm Giảng viên';
+                codeInput.readOnly = false;
+                passwordField.style.display = 'block';
+                form.querySelector('input[name=MatKhau]').required = true;
+                currentEditId = null;
+            } else {
+                title.textContent = modalId === 'sv-modal' ? 'Sửa Sinh viên' : 'Sửa Giảng viên';
+                codeInput.readOnly = true;
+                passwordField.style.display = 'none';
+                form.querySelector('input[name=MatKhau]').required = false;
+
+                currentEditId = data.maSV || data.maGV;
+                for (const key in data) {
+                    if (form.elements[key]) form.elements[key].value = data[key] || '';
+                }
+            }
+            modal.classList.add('active');
+        }
+        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
+
+        // --- Data Rendering ---
+        function renderSinhVienRow(sv) {
+            return `<tr class="border-b">
+                    <td class="p-2">${sv.maSV}</td><td class="p-2">${sv.hoTen}</td><td class="p-2">${sv.lop || ''}</td><td class="p-2">${sv.nganh || ''}</td>
+                    <td class="p-2"><button onclick='openModal("sv-modal", "edit", ${JSON.stringify(sv)})' class="text-blue-600 hover:underline">Sửa</button><button onclick='deleteData("sinhvien", "${sv.maSV}", () => loadData("sinhvien", "sv-table", renderSinhVienRow))' class="text-red-600 hover:underline ml-4">Xóa</button></td>
+                </tr>`;
+        }
+        function renderGiangVienRow(gv) {
+            return `<tr class="border-b">
+                    <td class="p-2">${gv.maGV}</td><td class="p-2">${gv.hoTen}</td><td class="p-2">${gv.boMon || ''}</td><td class="p-2">${gv.email || ''}</td>
+                    <td class="p-2"><button onclick='openModal("gv-modal", "edit", ${JSON.stringify(gv)})' class="text-blue-600 hover:underline">Sửa</button><button onclick='deleteData("giangvien", "${gv.maGV}", () => loadData("giangvien", "gv-table", renderGiangVienRow))' class="text-red-600 hover:underline ml-4">Xóa</button></td>
+                </tr>`;
         }
 
-        // --- Hàm gọi API được bảo vệ ---
-        async function fetchAdminData() {
+        // --- API & CRUD Logic ---
+        async function loadData(endpoint, tableId, renderFn) {
             try {
-                const response = await fetch('/api/admin/sinhvien', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': 'Bearer ' + authToken
-                    }
-                });
-
-                if (response.status === 401) { // Unauthorized
-                    logout();
-                    return;
-                }
-                if (!response.ok) {
-                    throw new Error('Không thể tải dữ liệu.');
-                }
-
-                const students = await response.json();
-                const tableBody = document.getElementById('admin-data-table');
+                const data = await fetchAPI(`/${endpoint}`, 'GET');
+                const tableBody = document.getElementById(tableId);
                 tableBody.innerHTML = '';
-                students.forEach(sv => {
-                    tableBody.innerHTML += `<tr><td class="border px-4 py-2">${sv.maSV}</td><td class="border px-4 py-2">${sv.hoTen}</td><td class="border px-4 py-2">${sv.lop || ''}</td></tr>`;
-                });
+                if (data) data.forEach(item => tableBody.innerHTML += renderFn(item));
+            } catch (err) { console.error("Load data error:", err); }
+        }
+        function setupForm(formId, modalId, endpoint, onSuccess) {
+            document.getElementById(formId).addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const dto = Object.fromEntries(new FormData(form).entries());
 
-            } catch (error) {
-                console.error('Lỗi:', error);
-                document.getElementById('admin-data-table').innerHTML = `<tr><td colspan="3" class="text-red-500 text-center p-4">Lỗi tải dữ liệu. Hãy chắc chắn API AdminController đã được bảo vệ.</td></tr>`;
+                const method = form.dataset.mode === 'add' ? 'POST' : 'PUT';
+                const url = form.dataset.mode === 'add' ? `/${endpoint}` : `/${endpoint}/${currentEditId}`;
+
+                try {
+                    await fetchAPI(url, method, dto);
+                    closeModal(modalId);
+                    onSuccess();
+                } catch (err) { console.error("Submit error:", err); alert("Thao tác thất bại!"); }
+            });
+        }
+        async function deleteData(endpoint, id, onSuccess) {
+            if (confirm(`Bạn có chắc muốn xóa đối tượng có mã ${id}?`)) {
+                try {
+                    await fetchAPI(`/${endpoint}/${id}`, 'DELETE');
+                    onSuccess();
+                } catch (err) { console.error("Delete error:", err); alert("Xóa thất bại!"); }
             }
         }
 
-        function logout() {
-            sessionStorage.clear();
-            window.location.href = '/index.html';
+        // --- Helper Functions ---
+        async function fetchAPI(url, method, body = null) {
+            const options = { method, headers: { 'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/json' } };
+            if (body) options.body = JSON.stringify(body);
+            const response = await fetch(`${API_BASE}${url}`, options);
+            if (response.status === 401) logout();
+            if (!response.ok && response.status !== 204) throw new Error(`API call failed: ${response.statusText}`);
+            return response.status !== 204 ? await response.json() : null;
         }
+        function logout() { sessionStorage.clear(); window.location.href = '/index.html'; }
     </script>
 </body>
 </html>

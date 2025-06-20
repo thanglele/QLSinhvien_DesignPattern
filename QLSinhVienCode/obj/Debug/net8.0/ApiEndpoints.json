@@ -1,35 +1,15 @@
 [
   {
     "ContainingType": "QLSinhVienCode.Controllers.AdminController",
-    "Method": "GetGiangViens",
-    "RelativePath": "api/Admin/giangvien",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
-    "Method": "GetSinhViens",
-    "RelativePath": "api/Admin/sinhvien",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
-    "Method": "CreateSinhVien",
-    "RelativePath": "api/Admin/sinhvien",
+    "Method": "NhapDiem",
+    "RelativePath": "api/admin/diem",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "QLSinhVienCode.DTOs.SinhVienDTO",
+        "Type": "QLSinhVienCode.DTOs.DiemDTO",
         "IsRequired": true
       }
     ],
@@ -37,8 +17,34 @@
   },
   {
     "ContainingType": "QLSinhVienCode.Controllers.AdminController",
-    "Method": "UpdateSinhVien",
-    "RelativePath": "api/Admin/sinhvien/{id}",
+    "Method": "GetAllGiangVien",
+    "RelativePath": "api/admin/giangvien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "CreateGiangVien",
+    "RelativePath": "api/admin/giangvien",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "QLSinhVienCode.DTOs.GiangVienCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "UpdateGiangVien",
+    "RelativePath": "api/admin/giangvien/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -50,7 +56,80 @@
       },
       {
         "Name": "dto",
-        "Type": "QLSinhVienCode.DTOs.SinhVienDTO",
+        "Type": "QLSinhVienCode.DTOs.GiangVienUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "DeleteGiangVien",
+    "RelativePath": "api/admin/giangvien/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "GetAllMonHoc",
+    "RelativePath": "api/admin/monhoc",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "GetAllSinhVien",
+    "RelativePath": "api/admin/sinhvien",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "CreateSinhVien",
+    "RelativePath": "api/admin/sinhvien",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "QLSinhVienCode.DTOs.SinhVienCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.AdminController",
+    "Method": "UpdateSinhVien",
+    "RelativePath": "api/admin/sinhvien/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "QLSinhVienCode.DTOs.SinhVienUpdateDTO",
         "IsRequired": true
       }
     ],
@@ -59,7 +138,7 @@
   {
     "ContainingType": "QLSinhVienCode.Controllers.AdminController",
     "Method": "DeleteSinhVien",
-    "RelativePath": "api/Admin/sinhvien/{id}",
+    "RelativePath": "api/admin/sinhvien/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -126,9 +205,25 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QLSinhVienCode.Controllers.GiangVienController",
-    "Method": "GetAll",
-    "RelativePath": "api/giangvien",
+    "ContainingType": "QLSinhVienCode.Controllers.GiangVienRoleController",
+    "Method": "NhapDiem",
+    "RelativePath": "api/giangvien-role/diem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "QLSinhVienCode.DTOs.DiemDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QLSinhVienCode.Controllers.GiangVienRoleController",
+    "Method": "GetAllMonHoc",
+    "RelativePath": "api/giangvien-role/monhoc",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -136,26 +231,20 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QLSinhVienCode.Controllers.GiangVienController",
-    "Method": "Create",
-    "RelativePath": "api/giangvien",
-    "HttpMethod": "POST",
+    "ContainingType": "QLSinhVienCode.Controllers.GiangVienRoleController",
+    "Method": "GetAllSinhVien",
+    "RelativePath": "api/giangvien-role/sinhvien",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "QLSinhVienCode.DTOs.GiangVienDTO",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QLSinhVienCode.Controllers.GiangVienController",
-    "Method": "Delete",
-    "RelativePath": "api/giangvien/{id}",
-    "HttpMethod": "DELETE",
+    "ContainingType": "QLSinhVienCode.Controllers.GiangVienRoleController",
+    "Method": "UpdateSinhVien",
+    "RelativePath": "api/giangvien-role/sinhvien/{id}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -163,14 +252,19 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "QLSinhVienCode.DTOs.SinhVienUpdateDTO",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QLSinhVienCode.Controllers.SinhVienController",
-    "Method": "Get",
-    "RelativePath": "api/sinhvien",
+    "ContainingType": "QLSinhVienCode.Controllers.SinhVienRoleController",
+    "Method": "GetMyGrades",
+    "RelativePath": "api/sinhvien-role/diem",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -178,19 +272,13 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "QLSinhVienCode.Controllers.SinhVienController",
-    "Method": "Post",
-    "RelativePath": "api/sinhvien",
-    "HttpMethod": "POST",
+    "ContainingType": "QLSinhVienCode.Controllers.SinhVienRoleController",
+    "Method": "GetAllMonHoc",
+    "RelativePath": "api/sinhvien-role/monhoc",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "QLSinhVienCode.DTOs.SinhVienDTO",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]

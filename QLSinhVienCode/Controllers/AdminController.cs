@@ -1,41 +1,45 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QLSinhVienCode.DTOs;
+using QLSinhVienCode.Repositories;
 using QLSinhVienCode.Services;
 
 namespace QLSinhVienCode.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")] // Bật dòng này để bảo vệ API
+    [Route("api/admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : ControllerBase
     {
-        private readonly ISinhVienService _sinhVienService;
+        private readonly IAdminService _adminService;
         private readonly IGiangVienService _giangVienService;
-
-        public AdminController(ISinhVienService sinhVienService, IGiangVienService giangVienService)
+        private readonly IUnitOfWork _unitOfWork;
+        public AdminController(IAdminService adminService, IUnitOfWork unitOfWork, IGiangVienService giangVienService)
         {
-            _sinhVienService = sinhVienService;
+            _adminService = adminService;
+            _unitOfWork = unitOfWork;
             _giangVienService = giangVienService;
         }
 
-        // --- Sinh Vien Endpoints ---
-        [HttpGet("sinhvien")]
-        public async Task<IActionResult> GetSinhViens() => Ok(await _sinhVienService.GetSinhViensAsync());
+        // Sinh Viên
+        [HttpGet("sinhvien")] public async Task<IActionResult> GetAllSinhVien() => Ok(await _unitOfWork.SinhViens.GetAllAsync());
+        [HttpPost("sinhvien")] public async Task<IActionResult> CreateSinhVien(SinhVienCreateDTO dto) => Ok(await _adminService.CreateSinhVienWithAccountAsync(dto));
+        [HttpPut("sinhvien/{id}")] public async Task<IActionResult> UpdateSinhVien(string id, SinhVienUpdateDTO dto) => Ok(await _adminService.UpdateSinhVienAsync(id, dto));
+        [HttpDelete("sinhvien/{id}")] public async Task<IActionResult> DeleteSinhVien(string id) => Ok(await _adminService.DeleteSinhVienAsync(id));
 
-        [HttpPost("sinhvien")]
-        public async Task<IActionResult> CreateSinhVien([FromBody] SinhVienDTO dto) { /* ... */ return Ok(); }
+        // Giảng Viên
+        [HttpGet("giangvien")] public async Task<IActionResult> GetAllGiangVien() => Ok(await _unitOfWork.GiangViens.GetAllAsync());
+        [HttpPost("giangvien")] public async Task<IActionResult> CreateGiangVien(GiangVienCreateDTO dto) => Ok(await _adminService.CreateGiangVienWithAccountAsync(dto));
+        [HttpPut("giangvien/{id}")] public async Task<IActionResult> UpdateGiangVien(string id, GiangVienUpdateDTO dto) => Ok(await _adminService.UpdateGiangVienAsync(id, dto));
+        [HttpDelete("giangvien/{id}")] public async Task<IActionResult> DeleteGiangVien(string id) => Ok(await _adminService.DeleteGiangVienAsync(id));
 
-        [HttpPut("sinhvien/{id}")]
-        public async Task<IActionResult> UpdateSinhVien(string id, [FromBody] SinhVienDTO dto) { /* ... */ return Ok(); }
+        // Môn Học
+        [HttpGet("monhoc")] public async Task<IActionResult> GetAllMonHoc() => Ok(await _unitOfWork.MonHocs.GetAllAsync());
+        [HttpPost("monhoc")] public async Task<IActionResult> CreateMonHoc(MonHocCreateUpdateDTO dto) { /*...*/ return Ok(); }
+        [HttpPut("monhoc/{id}")] public async Task<IActionResult> UpdateMonHoc(string id, MonHocCreateUpdateDTO dto) { /*...*/ return Ok(); }
+        [HttpDelete("monhoc/{id}")] public async Task<IActionResult> DeleteMonHoc(string id) { /*...*/ return Ok(); }
 
-        [HttpDelete("sinhvien/{id}")]
-        public async Task<IActionResult> DeleteSinhVien(string id) { /* ... */ return Ok(); }
-
-        // --- Giang Vien Endpoints ---
-        [HttpGet("giangvien")]
-        public async Task<IActionResult> GetGiangViens() => Ok(await _giangVienService.GetGiangViensAsync());
-
-        // ... Các endpoint khác cho Giảng viên, Môn học ...
+        // Điểm (Admin có quyền như Giảng viên)
+        [HttpPost("diem")] public async Task<IActionResult> NhapDiem(DiemDTO dto) => Ok(await _giangVienService.NhapOrUpdateDiemAsync(dto));
     }
 }

@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Admin/sinhvien": {
+    "/api/admin/sinhvien": {
       "get": {
         "tags": [
           "Admin"
@@ -24,17 +24,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienCreateDTO"
               }
             }
           }
@@ -46,7 +46,7 @@
         }
       }
     },
-    "/api/Admin/sinhvien/{id}": {
+    "/api/admin/sinhvien/{id}": {
       "put": {
         "tags": [
           "Admin"
@@ -65,17 +65,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             }
           }
@@ -107,11 +107,144 @@
         }
       }
     },
-    "/api/Admin/giangvien": {
+    "/api/admin/giangvien": {
       "get": {
         "tags": [
           "Admin"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienCreateDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienCreateDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienCreateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/giangvien/{id}": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienUpdateDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienUpdateDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GiangVienUpdateDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/monhoc": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/admin/diem": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -207,51 +340,10 @@
         }
       }
     },
-    "/api/giangvien": {
-      "get": {
+    "/api/giangvien-role/sinhvien/{id}": {
+      "put": {
         "tags": [
-          "GiangVien"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "GiangVien"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GiangVienDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GiangVienDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GiangVienDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/giangvien/{id}": {
-      "delete": {
-        "tags": [
-          "GiangVien"
+          "GiangVienRole"
         ],
         "parameters": [
           {
@@ -263,43 +355,21 @@
             }
           }
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/sinhvien": {
-      "get": {
-        "tags": [
-          "SinhVien"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "SinhVien"
-        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/SinhVienDTO"
+                "$ref": "#/components/schemas/SinhVienUpdateDTO"
               }
             }
           }
@@ -310,17 +380,136 @@
           }
         }
       }
+    },
+    "/api/giangvien-role/diem": {
+      "post": {
+        "tags": [
+          "GiangVienRole"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiemDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangvien-role/monhoc": {
+      "get": {
+        "tags": [
+          "GiangVienRole"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/giangvien-role/sinhvien": {
+      "get": {
+        "tags": [
+          "GiangVienRole"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/sinhvien-role/diem": {
+      "get": {
+        "tags": [
+          "SinhVienRole"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/sinhvien-role/monhoc": {
+      "get": {
+        "tags": [
+          "SinhVienRole"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
-      "GiangVienDTO": {
+      "DiemDTO": {
+        "type": "object",
+        "properties": {
+          "maSV": {
+            "type": "string",
+            "nullable": true
+          },
+          "maMon": {
+            "type": "string",
+            "nullable": true
+          },
+          "diem": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GiangVienCreateDTO": {
         "type": "object",
         "properties": {
           "maGV": {
             "type": "string",
             "nullable": true
           },
+          "hoTen": {
+            "type": "string",
+            "nullable": true
+          },
+          "matKhau": {
+            "type": "string",
+            "nullable": true
+          },
+          "boMon": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GiangVienUpdateDTO": {
+        "type": "object",
+        "properties": {
           "hoTen": {
             "type": "string",
             "nullable": true
@@ -368,13 +557,44 @@
         },
         "additionalProperties": false
       },
-      "SinhVienDTO": {
+      "SinhVienCreateDTO": {
         "type": "object",
         "properties": {
           "maSV": {
             "type": "string",
             "nullable": true
           },
+          "hoTen": {
+            "type": "string",
+            "nullable": true
+          },
+          "matKhau": {
+            "type": "string",
+            "nullable": true
+          },
+          "ngaySinh": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lop": {
+            "type": "string",
+            "nullable": true
+          },
+          "nganh": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SinhVienUpdateDTO": {
+        "type": "object",
+        "properties": {
           "hoTen": {
             "type": "string",
             "nullable": true

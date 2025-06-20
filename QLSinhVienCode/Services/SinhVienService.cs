@@ -8,6 +8,7 @@ namespace QLSinhVienCode.Services
     {
         Task<IEnumerable<SinhVien>> GetSinhViensAsync();
         Task<SinhVien> CreateSinhVienAsync(SinhVienDTO dto);
+        Task<IEnumerable<DiemChiTietDTO>> GetMyGradesAsync(string maSV);
     }
     public class SinhVienService : ISinhVienService
     {
@@ -20,6 +21,23 @@ namespace QLSinhVienCode.Services
             await _unitOfWork.SinhViens.AddAsync(sinhVien);
             await _unitOfWork.CompleteAsync();
             return sinhVien;
+        }
+
+        public async Task<IEnumerable<DiemChiTietDTO>> GetMyGradesAsync(string maSV)
+        {
+            var bangDiems = await _unitOfWork.BangDiems.FindAsync(d => d.MaSV == maSV);
+            var maMons = bangDiems.Select(d => d.MaMon);
+            var monHocs = (await _unitOfWork.MonHocs.FindAsync(m => maMons.Contains(m.MaMon)))
+                            .ToDictionary(m => m.MaMon);
+
+            return bangDiems.Select(d => new DiemChiTietDTO
+            {
+                MaMon = d.MaMon,
+                TenMon = monHocs.ContainsKey(d.MaMon) ? monHocs[d.MaMon].TenMon : "N/A",
+                SoTinChi = monHocs.ContainsKey(d.MaMon) ? monHocs[d.MaMon].SoTinChi : 0,
+                Diem = d.Diem,
+                LanThi = d.LanThi
+            });
         }
     }
 }

@@ -1,32 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QLSinhVienCode.DTOs;
+using QLSinhVienCode.Repositories;
 using QLSinhVienCode.Services;
 
 namespace QLSinhVienCode.Controllers
 {
-    // Controller cho Giảng viên
     [ApiController]
-    [Route("api/giangvien")]
-    public class GiangVienController : ControllerBase
+    [Route("api/giangvien-role")]
+    [Authorize(Roles = "GiangVien,Admin")]
+    public class GiangVienRoleController : ControllerBase
     {
-        private readonly IGiangVienService _service;
-        public GiangVienController(IGiangVienService service) { _service = service; }
+        private readonly IGiangVienService _giangVienService;
+        private readonly IUnitOfWork _unitOfWork;
+        public GiangVienRoleController(IGiangVienService gvService, IUnitOfWork unitOfWork) { _giangVienService = gvService; _unitOfWork = unitOfWork; }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll() => Ok(await _service.GetGiangViensAsync());
+        // Nghiệp vụ của Giảng viên
+        [HttpPut("sinhvien/{id}")] public async Task<IActionResult> UpdateSinhVien(string id, SinhVienUpdateDTO dto) => Ok(await _giangVienService.UpdateSinhVienAsGVAsync(id, dto));
+        [HttpPost("diem")] public async Task<IActionResult> NhapDiem(DiemDTO dto) => Ok(await _giangVienService.NhapOrUpdateDiemAsync(dto));
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] GiangVienDTO dto)
-        {
-            var gv = await _service.CreateGiangVienAsync(dto);
-            return CreatedAtAction(nameof(GetAll), new { id = gv.MaGV }, gv);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var result = await _service.DeleteGiangVienAsync(id);
-            return result ? NoContent() : NotFound();
-        }
+        // Chức năng xem chung
+        [HttpGet("monhoc")] public async Task<IActionResult> GetAllMonHoc() => Ok(await _unitOfWork.MonHocs.GetAllAsync());
+        [HttpGet("sinhvien")] public async Task<IActionResult> GetAllSinhVien() => Ok(await _unitOfWork.SinhViens.GetAllAsync());
     }
 }

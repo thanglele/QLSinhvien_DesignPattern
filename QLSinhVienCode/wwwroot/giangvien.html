@@ -1,34 +1,107 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giảng viên Dashboard - QLSV TLU</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+        .tab.active {
+            border-bottom-color: #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
-    <div class="p-6">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-bold" id="welcome-lecturer">Chào mừng Giảng viên!</h1>
-            <button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Đăng xuất</button>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <p>Chức năng: Xem lớp học được phân công, Nhập điểm, Sửa điểm.</p>
-            <!-- Nội dung cho giảng viên sẽ được xây dựng ở đây -->
-        </div>
-    </div>
+    <header class="p-4 bg-white shadow-md"><div class="container mx-auto flex justify-between items-center"><h1 class="text-2xl font-bold" id="welcome-lecturer">Giảng viên Dashboard</h1><button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded-lg">Đăng xuất</button></div></header>
+
+    <main class="container mx-auto p-4">
+        <div class="border-b border-gray-200 mb-6"><nav class="-mb-px flex gap-8" id="gv-tabs"><a href="#" class="tab active py-4 px-1 border-b-2 text-lg" data-target="diem">Quản lý Điểm</a><a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="sv">Danh sách Sinh viên</a><a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="mh">Danh sách Môn học</a></nav></div>
+
+        <div id="diem" class="tab-content active bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Nhập / Sửa Điểm</h2><form id="diem-form" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end"><input name="MaSV" placeholder="Mã Sinh viên" class="border p-2 rounded w-full" required><input name="MaMon" placeholder="Mã Môn học" class="border p-2 rounded w-full" required><input name="Diem" type="number" step="0.1" min="0" max="10" placeholder="Điểm" class="border p-2 rounded w-full" required><button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg md:col-start-4">Lưu Điểm</button></form></div>
+
+        <div id="sv" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Sinh viên</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã SV</th><th>Họ Tên</th><th>Lớp</th><th>Hành động</th></tr></thead><tbody id="sv-table"></tbody></table></div></div>
+
+        <div id="mh" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Môn học</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã Môn</th><th>Tên Môn</th><th>Số tín chỉ</th></tr></thead><tbody id="mh-table"></tbody></table></div></div>
+    </main>
+
     <script>
-        const userRole = sessionStorage.getItem('userRole');
+        const API_URL = '/api/giangvien-role';
         const authToken = sessionStorage.getItem('authToken');
 
-        if (!authToken || !userRole || userRole.toLowerCase() !== 'giangvien') {
-            window.location.href = '/index.html';
-        } else {
-            document.getElementById('welcome-lecturer').textContent = 'Chào mừng Giảng viên: ' + (sessionStorage.getItem('userName') || '');
+        // --- Auth & Init ---
+        if (!authToken || sessionStorage.getItem('userRole')?.toLowerCase() !== 'giangvien') logout();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('welcome-lecturer').textContent = 'Chào mừng Giảng viên: ' + sessionStorage.getItem('userName');
+            setupTabs('gv-tabs');
+        });
+
+        // --- UI Logic ---
+        function setupTabs(containerId) {
+            const tabsContainer = document.getElementById(containerId);
+            tabsContainer.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    tabsContainer.querySelector('.active').classList.remove('active');
+                    e.target.classList.add('active');
+                    document.querySelector('.tab-content.active').classList.remove('active');
+                    const targetId = e.target.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+
+                    if (targetId === 'sv') loadData('/sinhvien', 'sv-table', renderSinhVienRow);
+                    if (targetId === 'mh') loadData('/monhoc', 'mh-table', renderMonHocRow);
+                }
+            });
         }
 
-        function logout() {
-            sessionStorage.clear();
-            window.location.href = '/index.html';
+        // --- Data Rendering ---
+        function renderSinhVienRow(sv) {
+            return `<tr class="border-b"><td class="p-2">${sv.maSV}</td><td class="p-2">${sv.hoTen}</td><td class="p-2">${sv.lop || ''}</td>
+                        <td class="p-2"><button class="text-blue-600 hover:underline">Sửa</button></td></tr>`;
         }
+        function renderMonHocRow(mh) {
+            return `<tr class="border-b"><td class="p-2">${mh.maMon}</td><td class="p-2">${mh.tenMon}</td><td class="p-2">${mh.soTinChi || ''}</td></tr>`;
+        }
+
+        // --- API & CRUD Logic ---
+        document.getElementById('diem-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const dto = Object.fromEntries(new FormData(e.target).entries());
+            try {
+                await fetchAPI('/diem', 'POST', dto);
+                alert('Lưu điểm thành công!');
+                e.target.reset();
+            } catch (err) { console.error(err); alert('Lưu điểm thất bại!'); }
+        });
+
+        async function loadData(endpoint, tableId, renderFn) {
+            try {
+                const data = await fetchAPI(endpoint, 'GET');
+                const tableBody = document.getElementById(tableId);
+                tableBody.innerHTML = '';
+                if (data) data.forEach(item => tableBody.innerHTML += renderFn(item));
+            } catch (err) { console.error("Load data error:", err); }
+        }
+
+        // --- Helper Functions ---
+        async function fetchAPI(url, method, body = null) {
+            const options = { method, headers: { 'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/json' } };
+            if (body) options.body = JSON.stringify(body);
+            const response = await fetch(`${API_URL}${url}`, options);
+            if (response.status === 401) logout();
+            if (!response.ok && response.status !== 204) throw new Error(`API call failed: ${response.statusText}`);
+            return response.status !== 204 ? await response.json() : null;
+        }
+        function logout() { sessionStorage.clear(); window.location.href = '/index.html'; }
     </script>
 </body>
 </html>
