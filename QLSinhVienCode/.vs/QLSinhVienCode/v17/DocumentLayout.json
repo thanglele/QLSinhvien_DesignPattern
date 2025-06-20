@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,14 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\dtos\\diemchitietdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:dtos\\diemchitietdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +54,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-20T12:32:05.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SinhVienController.cs",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\SinhVienController.cs",
               "RelativeDocumentMoniker": "Controllers\\SinhVienController.cs",
@@ -63,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
@@ -71,12 +88,11 @@
               "RelativeToolTip": "Controllers\\AdminController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:06:33.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:06:33.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "SinhVienService.cs",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Services\\SinhVienService.cs",
               "RelativeDocumentMoniker": "Services\\SinhVienService.cs",
@@ -84,12 +100,11 @@
               "RelativeToolTip": "Services\\SinhVienService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwBgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:05:41.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:05:41.392Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "MonHocCreateUpdateDTO.cs",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\MonHocCreateUpdateDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\MonHocCreateUpdateDTO.cs",
@@ -97,12 +112,11 @@
               "RelativeToolTip": "DTOs\\MonHocCreateUpdateDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:05:11.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:05:11.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "DiemChiTietDTO.cs",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\DiemChiTietDTO.cs",
               "RelativeDocumentMoniker": "DTOs\\DiemChiTietDTO.cs",
@@ -110,44 +124,43 @@
               "RelativeToolTip": "DTOs\\DiemChiTietDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:04:53.094Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-20T12:04:53.094Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "sinhvien.html",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\sinhvien.html",
               "RelativeDocumentMoniker": "wwwroot\\sinhvien.html",
               "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\sinhvien.html",
               "RelativeToolTip": "wwwroot\\sinhvien.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAkwGEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-06-20T11:47:23.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "giangvien.html",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\giangvien.html",
               "RelativeDocumentMoniker": "wwwroot\\giangvien.html",
               "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\giangvien.html",
               "RelativeToolTip": "wwwroot\\giangvien.html",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFUAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAkwMwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-06-20T11:47:10.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "admin.html",
               "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\admin.html",
               "RelativeDocumentMoniker": "wwwroot\\admin.html",
               "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\admin.html",
               "RelativeToolTip": "wwwroot\\admin.html",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAkwMsAAAB0AAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAkwL4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-06-20T11:46:58.476Z",
               "EditorCaption": ""

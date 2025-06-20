@@ -2,7 +2,6 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinh viên Dashboard - QLSV TLU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -19,19 +18,27 @@
             color: #3b82f6;
             font-weight: 600;
         }
+
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="p-4 bg-white shadow-md"><div class="container mx-auto flex justify-between items-center"><h1 class="text-2xl font-bold" id="welcome-student">Thông tin sinh viên</h1><button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded-lg">Đăng xuất</button></div></header>
+<body class="bg-gray-100 font-sans">
+    <header class="p-4 bg-white shadow-md"><div class="container mx-auto flex justify-between items-center"><h1 class="text-2xl font-bold" id="welcome-student">Thông tin sinh viên</h1><button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">Đăng xuất</button></div></header>
 
     <main class="container mx-auto p-4">
         <div class="border-b border-gray-200 mb-6"><nav class="-mb-px flex gap-8" id="sv-tabs"><a href="#" class="tab active py-4 px-1 border-b-2 text-lg" data-target="diem">Bảng điểm cá nhân</a><a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="mh">Danh sách Môn học</a></nav></div>
 
-        <div id="diem" class="tab-content active bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Kết quả học tập</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã Môn học</th><th>Điểm số</th><th>Lần thi</th></tr></thead><tbody id="diem-table"></tbody></table></div></div>
+        <div id="diem" class="tab-content active bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Kết quả học tập</h2><div class="overflow-x-auto"><table class="w-full"><thead><tr class="bg-gray-200"><th>Mã Môn</th><th>Tên Môn</th><th>Số tín chỉ</th><th>Điểm</th></tr></thead><tbody id="diem-table"></tbody></table></div></div>
 
-        <div id="mh" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Môn học có thể đăng ký</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã Môn</th><th>Tên Môn</th><th>Số tín chỉ</th></tr></thead><tbody id="mh-table"></tbody></table></div></div>
+        <div id="mh" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Môn học</h2><div class="overflow-x-auto"><table class="w-full"><thead><tr class="bg-gray-200"><th>Mã Môn</th><th>Tên Môn</th><th>Số tín chỉ</th></tr></thead><tbody id="mh-table"></tbody></table></div></div>
     </main>
-
     <script>
         const API_URL = '/api/sinhvien-role';
         const authToken = sessionStorage.getItem('authToken');
@@ -44,7 +51,7 @@
             loadData('/diem', 'diem-table', renderDiemRow);
         });
 
-        // --- UI Logic ---
+        // --- UI Logic & Data Rendering ---
         function setupTabs(containerId) {
             const tabsContainer = document.getElementById(containerId);
             tabsContainer.addEventListener('click', (e) => {
@@ -55,30 +62,28 @@
                     document.querySelector('.tab-content.active').classList.remove('active');
                     const targetId = e.target.getAttribute('data-target');
                     document.getElementById(targetId).classList.add('active');
-
                     if (targetId === 'diem') loadData('/diem', 'diem-table', renderDiemRow);
                     if (targetId === 'mh') loadData('/monhoc', 'mh-table', renderMonHocRow);
                 }
             });
         }
-
-        // --- Data Rendering ---
         function renderDiemRow(d) {
-            return `<tr class="border-b"><td class="p-2">${d.maMon}</td><td class="p-2 font-semibold">${d.diem}</td><td class="p-2">${d.lanThi || 1}</td></tr>`;
+            return `<tr class="border-b"><td>${d.maMon}</td><td>${d.tenMon}</td><td>${d.soTinChi || ''}</td><td class="font-semibold text-blue-600">${d.diem}</td></tr>`;
         }
         function renderMonHocRow(mh) {
-            return `<tr class="border-b"><td class="p-2">${mh.maMon}</td><td class="p-2">${mh.tenMon}</td><td class="p-2">${mh.soTinChi || ''}</td></tr>`;
+            return `<tr class="border-b"><td>${mh.maMon}</td><td>${mh.tenMon}</td><td>${mh.soTinChi || ''}</td></tr>`;
         }
-
-        // --- Helper Functions ---
         async function loadData(endpoint, tableId, renderFn) {
             try {
                 const data = await fetchAPI(endpoint, 'GET');
                 const tableBody = document.getElementById(tableId);
-                tableBody.innerHTML = '';
-                if (data) data.forEach(item => tableBody.innerHTML += renderFn(item));
+                tableBody.innerHTML = !data || data.length === 0
+                    ? `<tr><td colspan="4" class="text-center p-4">Không có dữ liệu.</td></tr>`
+                    : data.map(renderFn).join('');
             } catch (err) { console.error("Load data error:", err); }
         }
+
+        // --- Helper Functions ---
         async function fetchAPI(url, method) {
             const options = { method, headers: { 'Authorization': 'Bearer ' + authToken } };
             const response = await fetch(`${API_URL}${url}`, options);

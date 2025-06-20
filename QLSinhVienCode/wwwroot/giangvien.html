@@ -6,12 +6,12 @@
     <title>Giảng viên Dashboard - QLSV TLU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .tab-content {
+        .modal, .tab-content {
             display: none;
         }
 
-            .tab-content.active {
-                display: block;
+            .modal.active, .tab-content.active {
+                display: flex;
             }
 
         .tab.active {
@@ -19,33 +19,107 @@
             color: #3b82f6;
             font-weight: 600;
         }
+
+        tbody tr:hover {
+            background-color: #f9fafb;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="p-4 bg-white shadow-md"><div class="container mx-auto flex justify-between items-center"><h1 class="text-2xl font-bold" id="welcome-lecturer">Giảng viên Dashboard</h1><button onclick="logout()" class="bg-red-500 text-white py-2 px-4 rounded-lg">Đăng xuất</button></div></header>
+<body class="bg-gray-100 font-sans">
+    <header class="p-4 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold" id="welcome-lecturer">Giảng viên Dashboard</h1>
+            <button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg">Đăng xuất</button>
+        </div>
+    </header>
 
     <main class="container mx-auto p-4">
-        <div class="border-b border-gray-200 mb-6"><nav class="-mb-px flex gap-8" id="gv-tabs"><a href="#" class="tab active py-4 px-1 border-b-2 text-lg" data-target="diem">Quản lý Điểm</a><a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="sv">Danh sách Sinh viên</a><a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="mh">Danh sách Môn học</a></nav></div>
+        <div class="border-b border-gray-200 mb-6">
+            <nav class="-mb-px flex gap-8" id="gv-tabs">
+                <a href="#" class="tab active py-4 px-1 border-b-2 text-lg" data-target="diem">Quản lý Điểm</a>
+                <a href="#" class="tab py-4 px-1 border-b-2 text-lg" data-target="sv">Tra cứu Sinh viên</a>
+            </nav>
+        </div>
 
-        <div id="diem" class="tab-content active bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Nhập / Sửa Điểm</h2><form id="diem-form" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end"><input name="MaSV" placeholder="Mã Sinh viên" class="border p-2 rounded w-full" required><input name="MaMon" placeholder="Mã Môn học" class="border p-2 rounded w-full" required><input name="Diem" type="number" step="0.1" min="0" max="10" placeholder="Điểm" class="border p-2 rounded w-full" required><button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg md:col-start-4">Lưu Điểm</button></form></div>
+        <div id="diem" class="tab-content active bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Nhập / Sửa Điểm</h2>
+            <form id="diem-form" class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                <input name="MaSV" placeholder="Mã Sinh viên" class="border p-2 rounded w-full" required>
+                <input name="MaMon" placeholder="Mã Môn học" class="border p-2 rounded w-full" required>
+                <input name="Diem" type="number" step="0.1" min="0" max="10" placeholder="Điểm" class="border p-2 rounded w-full" required>
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg md:col-start-4">Lưu Điểm</button>
+            </form>
+        </div>
 
-        <div id="sv" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Sinh viên</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã SV</th><th>Họ Tên</th><th>Lớp</th><th>Hành động</th></tr></thead><tbody id="sv-table"></tbody></table></div></div>
-
-        <div id="mh" class="tab-content bg-white p-6 rounded-lg shadow-lg"><h2 class="text-2xl font-semibold mb-4">Danh sách Môn học</h2><div class="overflow-x-auto"><table class="min-w-full"><thead><tr class="bg-gray-200 text-left"><th>Mã Môn</th><th>Tên Môn</th><th>Số tín chỉ</th></tr></thead><tbody id="mh-table"></tbody></table></div></div>
+        <div id="sv" class="tab-content bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-semibold">Danh sách Sinh viên</h2>
+                <input id="sv-search" type="text" placeholder="Tìm kiếm theo tên hoặc mã SV..." class="border p-2 rounded w-1/3">
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead><tr class="bg-gray-200"><th>Mã SV</th><th>Họ Tên</th><th>Lớp</th><th>Hành động</th></tr></thead>
+                    <tbody id="sv-table"></tbody>
+                </table>
+            </div>
+        </div>
     </main>
 
-    <script>
-        const API_URL = '/api/giangvien-role';
-        const authToken = sessionStorage.getItem('authToken');
+    <div id="sv-edit-modal" class="modal fixed inset-0 bg-gray-600 bg-opacity-50 justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
+            <h3 class="text-2xl mb-6 font-semibold">Sửa thông tin Sinh viên</h3>
+            <form id="sv-edit-form">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-2"><label>Họ Tên</label><input name="HoTen" class="w-full border p-2 rounded mt-1" required></div>
+                    <div><label>Lớp</label><input name="Lop" class="w-full border p-2 rounded mt-1"></div>
+                    <div><label>Ngành</label><input name="Nganh" class="w-full border p-2 rounded mt-1"></div>
+                </div>
+                <div class="flex justify-end gap-4 mt-6">
+                    <button type="button" onclick="closeModal('sv-edit-modal')" class="bg-gray-300 py-2 px-4 rounded-lg">Hủy</button>
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        // --- Auth & Init ---
-        if (!authToken || sessionStorage.getItem('userRole')?.toLowerCase() !== 'giangvien') logout();
+    <script>
+        const API_BASE_GV = '/api/giangvien-role';
+        const authToken = sessionStorage.getItem('authToken');
+        let allStudents = [];
+        let currentEditStudentId = null;
+
+        // --- AUTHENTICATION & INITIALIZATION ---
+        // Đã sửa lại logic kiểm tra để rõ ràng và an toàn hơn
         document.addEventListener('DOMContentLoaded', () => {
+            const userRole = sessionStorage.getItem('userRole');
+
+            // 1. Kiểm tra có token không
+            if (!authToken) {
+                logout();
+                return; // Dừng ngay lập tức
+            }
+
+            // 2. Kiểm tra vai trò hợp lệ
+            const roleLower = userRole?.toLowerCase();
+            if (roleLower !== 'giangvien' && roleLower !== 'admin') {
+                logout();
+                return; // Dừng ngay lập tức
+            }
+
+            // Nếu mọi thứ hợp lệ, tiếp tục thực thi
             document.getElementById('welcome-lecturer').textContent = 'Chào mừng Giảng viên: ' + sessionStorage.getItem('userName');
             setupTabs('gv-tabs');
+            document.getElementById('diem-form').addEventListener('submit', handleDiemSubmit);
+            document.getElementById('sv-edit-form').addEventListener('submit', handleSvEditSubmit);
+            document.getElementById('sv-search').addEventListener('input', handleSearch);
         });
 
-        // --- UI Logic ---
+        // --- UI & EVENT LOGIC ---
         function setupTabs(containerId) {
             const tabsContainer = document.getElementById(containerId);
             tabsContainer.addEventListener('click', (e) => {
@@ -56,52 +130,75 @@
                     document.querySelector('.tab-content.active').classList.remove('active');
                     const targetId = e.target.getAttribute('data-target');
                     document.getElementById(targetId).classList.add('active');
-
-                    if (targetId === 'sv') loadData('/sinhvien', 'sv-table', renderSinhVienRow);
-                    if (targetId === 'mh') loadData('/monhoc', 'mh-table', renderMonHocRow);
+                    if (targetId === 'sv') loadAllStudents();
                 }
             });
         }
-
-        // --- Data Rendering ---
-        function renderSinhVienRow(sv) {
-            return `<tr class="border-b"><td class="p-2">${sv.maSV}</td><td class="p-2">${sv.hoTen}</td><td class="p-2">${sv.lop || ''}</td>
-                        <td class="p-2"><button class="text-blue-600 hover:underline">Sửa</button></td></tr>`;
+        function openSvEditModal(sv) {
+            const form = document.getElementById('sv-edit-form');
+            form.reset();
+            currentEditStudentId = sv.maSV;
+            form.elements['HoTen'].value = sv.hoTen;
+            form.elements['Lop'].value = sv.lop || '';
+            form.elements['Nganh'].value = sv.nganh || '';
+            document.getElementById('sv-edit-modal').classList.add('active');
         }
-        function renderMonHocRow(mh) {
-            return `<tr class="border-b"><td class="p-2">${mh.maMon}</td><td class="p-2">${mh.tenMon}</td><td class="p-2">${mh.soTinChi || ''}</td></tr>`;
+        function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); }
+        function handleSearch(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredStudents = allStudents.filter(sv => sv.hoTen.toLowerCase().includes(searchTerm) || sv.maSV.toLowerCase().includes(searchTerm));
+            renderTable('sv-table', filteredStudents, renderSinhVienRow);
         }
 
-        // --- API & CRUD Logic ---
-        document.getElementById('diem-form').addEventListener('submit', async (e) => {
+        // --- FORM HANDLERS ---
+        async function handleDiemSubmit(e) {
             e.preventDefault();
             const dto = Object.fromEntries(new FormData(e.target).entries());
             try {
                 await fetchAPI('/diem', 'POST', dto);
-                alert('Lưu điểm thành công!');
-                e.target.reset();
+                alert('Lưu điểm thành công!'); e.target.reset();
             } catch (err) { console.error(err); alert('Lưu điểm thất bại!'); }
-        });
-
-        async function loadData(endpoint, tableId, renderFn) {
+        }
+        async function handleSvEditSubmit(e) {
+            e.preventDefault();
+            const dto = Object.fromEntries(new FormData(e.target).entries());
             try {
-                const data = await fetchAPI(endpoint, 'GET');
-                const tableBody = document.getElementById(tableId);
-                tableBody.innerHTML = '';
-                if (data) data.forEach(item => tableBody.innerHTML += renderFn(item));
-            } catch (err) { console.error("Load data error:", err); }
+                await fetchAPI(`/sinhvien/${currentEditStudentId}`, 'PUT', dto);
+                closeModal('sv-edit-modal');
+                loadAllStudents();
+            } catch (err) { console.error(err); alert('Cập nhật thất bại!'); }
         }
 
-        // --- Helper Functions ---
+        // --- DATA LOGIC ---
+        async function loadAllStudents() {
+            try {
+                allStudents = await fetchAPI('/sinhvien', 'GET');
+                renderTable('sv-table', allStudents, renderSinhVienRow);
+            } catch (err) { console.error("Load students error:", err); }
+        }
+        function renderTable(tableId, data, renderFn) {
+            const tableBody = document.getElementById(tableId);
+            tableBody.innerHTML = !data || data.length === 0
+                ? `<tr><td colspan="4" class="text-center p-4">Không có dữ liệu.</td></tr>`
+                : data.map(renderFn).join('');
+        }
+        function renderSinhVienRow(sv) {
+            return `<tr class="border-b"><td>${sv.maSV}</td><td>${sv.hoTen}</td><td>${sv.lop || ''}</td><td><button onclick='openSvEditModal(${JSON.stringify(sv)})' class="text-blue-600 hover:underline">Sửa</button></td></tr>`;
+        }
+
+        // --- HELPER FUNCTIONS ---
         async function fetchAPI(url, method, body = null) {
             const options = { method, headers: { 'Authorization': 'Bearer ' + authToken, 'Content-Type': 'application/json' } };
             if (body) options.body = JSON.stringify(body);
-            const response = await fetch(`${API_URL}${url}`, options);
-            if (response.status === 401) logout();
+            const response = await fetch(`${API_BASE_GV}${url}`, options);
+            if (response.status === 401) { logout(); return; }
             if (!response.ok && response.status !== 204) throw new Error(`API call failed: ${response.statusText}`);
             return response.status !== 204 ? await response.json() : null;
         }
-        function logout() { sessionStorage.clear(); window.location.href = '/index.html'; }
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = '/index.html';
+        }
     </script>
 </body>
 </html>

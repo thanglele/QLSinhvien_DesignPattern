@@ -1,3 +1,4 @@
+wwwroot\admin.html
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\index.html
@@ -59,6 +60,5 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\admin.html
-wwwroot\giangvien.html
 wwwroot\sinhvien.html
+wwwroot\giangvien.html

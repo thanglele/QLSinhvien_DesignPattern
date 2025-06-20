@@ -5,6 +5,14 @@
   ],
   "Root": {
     "Children": {
+      "admin.html": {
+        "Children": null,
+        "Asset": {
+          "ContentRootIndex": 0,
+          "SubPath": "admin.html"
+        },
+        "Patterns": null
+      },
       "favicon.ico": {
         "Children": null,
         "Asset": {
@@ -13,11 +21,27 @@
         },
         "Patterns": null
       },
+      "giangvien.html": {
+        "Children": null,
+        "Asset": {
+          "ContentRootIndex": 0,
+          "SubPath": "giangvien.html"
+        },
+        "Patterns": null
+      },
       "index.html": {
         "Children": null,
         "Asset": {
           "ContentRootIndex": 0,
           "SubPath": "index.html"
+        },
+        "Patterns": null
+      },
+      "sinhvien.html": {
+        "Children": null,
+        "Asset": {
+          "ContentRootIndex": 0,
+          "SubPath": "sinhvien.html"
         },
         "Patterns": null
       },
