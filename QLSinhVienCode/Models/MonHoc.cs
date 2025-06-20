@@ -1,31 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QLSinhVienCode.Models;
-
-public partial class MonHoc
+namespace QLSinhVienCode.Models
 {
-    public string MaMon { get; set; } = null!;
+    [Table("MonHoc")]
+    public class MonHoc
+    {
+        [Key]
+        [Column("MaMon")]
+        [StringLength(20)]
+        public string MaMon { get; set; }
 
-    public string TenMon { get; set; } = null!;
+        [Required]
+        [Column("TenMon")]
+        [StringLength(100)]
+        public string TenMon { get; set; }
 
-    public int? SoTinChi { get; set; }
+        [Column("SoTinChi")]
+        public int? SoTinChi { get; set; }
 
-    public int? HocKy { get; set; }
+        [Column("HocKy")]
+        public int? HocKy { get; set; }
 
-    public string? LoaiMonHoc { get; set; }
+        [Column("LoaiMonHoc")]
+        [StringLength(50)]
+        public string? LoaiMonHoc { get; set; }
 
-    public int? SoTiet { get; set; }
+        [Column("SoTiet")]
+        public int? SoTiet { get; set; }
 
-    public string? GhiChu { get; set; }
+        [Column("GhiChu")]
+        [StringLength(255)]
+        public string? GhiChu { get; set; }
 
-    public string? MaKhoa { get; set; }
+        [Column("MaKhoa")]
+        [StringLength(10)]
+        public string? MaKhoa { get; set; }
 
-    public string? MaGv { get; set; }
+        [Column("MaGV")]
+        [StringLength(20)]
+        public string? MaGV { get; set; }
 
-    public virtual ICollection<BangDiem> BangDiems { get; set; } = new List<BangDiem>();
+        [ForeignKey("MaKhoa")]
+        public virtual Khoa? Khoa { get; set; }
 
-    public virtual GiangVien? MaGvNavigation { get; set; }
-
-    public virtual Khoa? MaKhoaNavigation { get; set; }
+        [ForeignKey("MaGV")]
+        public virtual GiangVien? GiangVien { get; set; }
+    }
 }

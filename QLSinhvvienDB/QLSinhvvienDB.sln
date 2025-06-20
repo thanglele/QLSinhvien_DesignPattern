@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # SQL Server Management Studio Version 21
-VisualStudioVersion = 17.14.36212.18 d17.14
+VisualStudioVersion = 17.14.36212.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "QLSinhvvienDB", "QLSinhvvienDB.ssmssqlproj", "{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}"
 EndProject
@@ -11,7 +11,7 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}.Default|Default.ActiveCfg = Default
-		{F5685FDC-4D05-4141-870E-1B9F64622A56}.Default|Default.ActiveCfg = Default
+		{69CA7C4F-2870-4E1C-88CD-A9E4A38F119D}.Default|Default.ActiveCfg = Default
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

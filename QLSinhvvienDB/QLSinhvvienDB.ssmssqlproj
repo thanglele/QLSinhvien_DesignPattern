@@ -3,6 +3,20 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
+        <ConnectionNode Name="127.0.0.1:sa">
+          <Created>2025-06-20T14:13:28.5254412+07:00</Created>
+          <Type>SQL</Type>
+          <Server>127.0.0.1</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <TrustServerCertificate>True</TrustServerCertificate>
+          <EncryptionOption>True</EncryptionOption>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
         <ConnectionNode Name="server.thanglele.cloud:sa">
           <Created>2025-06-19T23:54:29.436916+07:00</Created>
           <Type>SQL</Type>
@@ -22,15 +36,15 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="InitData.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:server.thanglele.cloud:False:sa</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>server.thanglele.cloud</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:127.0.0.1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>127.0.0.1</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>InitData.sql</FullPath>
         </FileNode>
         <FileNode Name="InitDB.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:127.0.0.1:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>127.0.0.1</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>InitDB.sql</FullPath>
         </FileNode>
       </Items>

@@ -1,31 +1,57 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QLSinhVienCode.Models;
-
-public partial class SinhVien
+namespace QLSinhVienCode.Models
 {
-    public string MaSv { get; set; } = null!;
+    [Table("SinhVien")]
+    public class SinhVien
+    {
+        [Key]
+        [Column("MaSV")]
+        [StringLength(20)]
+        public string MaSV { get; set; }
 
-    public string HoTen { get; set; } = null!;
+        [Required]
+        [Column("HoTen")]
+        [StringLength(100)]
+        public string HoTen { get; set; }
 
-    public DateOnly? NgaySinh { get; set; }
+        [Column("NgaySinh")]
+        public DateTime? NgaySinh { get; set; }
 
-    public string? GioiTinh { get; set; }
+        [Column("GioiTinh")]
+        [StringLength(10)]
+        public string? GioiTinh { get; set; }
 
-    public string? DiaChi { get; set; }
+        [Column("DiaChi")]
+        [StringLength(225)]
+        public string? DiaChi { get; set; }
 
-    public string? Lop { get; set; }
+        [Column("Lop")]
+        [StringLength(20)]
+        public string? Lop { get; set; }
 
-    public string? Nganh { get; set; }
+        [Column("Nganh")]
+        [StringLength(100)]
+        public string? Nganh { get; set; }
 
-    public string? Email { get; set; }
+        [Column("Email")]
+        [StringLength(100)]
+        public string? Email { get; set; }
 
-    public string? SoDienThoai { get; set; }
+        [Column("SoDienThoai")]
+        [StringLength(15)]
+        public string? SoDienThoai { get; set; }
 
-    public string? TenDangNhap { get; set; }
+        [Column("TenDangNhap")]
+        [StringLength(50)]
+        public string? TenDangNhap { get; set; }
 
-    public virtual ICollection<BangDiem> BangDiems { get; set; } = new List<BangDiem>();
+        [ForeignKey("TenDangNhap")]
+        public virtual TaiKhoan? TaiKhoan { get; set; }
 
-    public virtual TaiKhoan? TenDangNhapNavigation { get; set; }
+        public virtual ICollection<BangDiem> BangDiems { get; set; } = new List<BangDiem>();
+    }
 }

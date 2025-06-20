@@ -1,23 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QLSinhVienCode.Models;
-
-public partial class BangDiem
+namespace QLSinhVienCode.Models
 {
-    public int Id { get; set; }
+    [Table("BangDiem")]
+    public class BangDiem
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("ID")]
+        public int ID { get; set; }
 
-    public string? MaSv { get; set; }
+        [Required]
+        [Column("MaSV")]
+        [StringLength(20)]
+        public string MaSV { get; set; }
 
-    public string? MaMon { get; set; }
+        [Required]
+        [Column("MaMon")]
+        [StringLength(20)]
+        public string MaMon { get; set; }
 
-    public double? Diem { get; set; }
+        [Column("Diem")]
+        public double? Diem { get; set; }
 
-    public int? LanThi { get; set; }
+        [Column("LanThi")]
+        public int? LanThi { get; set; }
 
-    public DateOnly? NgayNhap { get; set; }
+        [Column("NgayNhap")]
+        public DateTime? NgayNhap { get; set; }
 
-    public virtual MonHoc? MaMonNavigation { get; set; }
+        [ForeignKey("MaSV")]
+        public virtual SinhVien? SinhVien { get; set; }
 
-    public virtual SinhVien? MaSvNavigation { get; set; }
+        [ForeignKey("MaMon")]
+        public virtual MonHoc? MonHoc { get; set; }
+    }
 }

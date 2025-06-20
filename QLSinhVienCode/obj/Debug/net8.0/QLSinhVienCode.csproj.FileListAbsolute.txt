@@ -139,9 +139,7 @@ D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\rjimswa.dswa.cache.json
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\scopedcss\bundle\QLSinhVienCode.styles.css
-D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\scopedcss\projectbundle\QLSinhVienCode.bundle.scp.css
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\staticwebassets.build.json
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\staticwebassets.development.json
@@ -153,3 +151,9 @@ D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\QLSinhVienCode.genruntimeconfig.cache
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\ref\QLSinhVienCode.dll
 D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\obj\Debug\net8.0\QLSinhVienCode.sourcelink.json
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

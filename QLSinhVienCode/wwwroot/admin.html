@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - QLSV TLU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold" id="welcome-admin">Chào mừng Admin!</h1>
+            <button onclick="logout()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Đăng xuất</button>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Danh sách Sinh viên (Dữ liệu được bảo vệ)</h2>
+            <table class="min-w-full bg-white">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="py-2 px-4">Mã SV</th>
+                        <th class="py-2 px-4">Họ Tên</th>
+                        <th class="py-2 px-4">Lớp</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-data-table">
+                    <!-- Dữ liệu sẽ được tải vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // --- Logic xác thực khi tải trang ---
+        const userRole = sessionStorage.getItem('userRole');
+        const authToken = sessionStorage.getItem('authToken');
+
+        // Sửa lỗi: Kiểm tra không phân biệt chữ hoa/thường và kiểm tra token
+        if (!authToken || !userRole || userRole.toLowerCase() !== 'admin') {
+            window.location.href = '/index.html';
+        } else {
+            document.getElementById('welcome-admin').textContent = 'Chào mừng Admin: ' + (sessionStorage.getItem('userName') || '');
+            fetchAdminData();
+        }
+
+        // --- Hàm gọi API được bảo vệ ---
+        async function fetchAdminData() {
+            try {
+                const response = await fetch('/api/admin/sinhvien', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer ' + authToken
+                    }
+                });
+
+                if (response.status === 401) { // Unauthorized
+                    logout();
+                    return;
+                }
+                if (!response.ok) {
+                    throw new Error('Không thể tải dữ liệu.');
+                }
+
+                const students = await response.json();
+                const tableBody = document.getElementById('admin-data-table');
+                tableBody.innerHTML = '';
+                students.forEach(sv => {
+                    tableBody.innerHTML += `<tr><td class="border px-4 py-2">${sv.maSV}</td><td class="border px-4 py-2">${sv.hoTen}</td><td class="border px-4 py-2">${sv.lop || ''}</td></tr>`;
+                });
+
+            } catch (error) {
+                console.error('Lỗi:', error);
+                document.getElementById('admin-data-table').innerHTML = `<tr><td colspan="3" class="text-red-500 text-center p-4">Lỗi tải dữ liệu. Hãy chắc chắn API AdminController đã được bảo vệ.</td></tr>`;
+            }
+        }
+
+        function logout() {
+            sessionStorage.clear();
+            window.location.href = '/index.html';
+        }
+    </script>
+</body>
+</html>

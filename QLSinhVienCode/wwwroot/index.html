@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập - Quản lý Sinh viên TLU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-bold text-center mb-6">Đăng nhập hệ thống</h2>
+        <form id="loginForm">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Tên đăng nhập</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" id="username" type="text" placeholder="Tên đăng nhập" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Mật khẩu</label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700" id="password" type="password" placeholder="******************" required>
+            </div>
+            <div id="error-message" class="text-red-500 text-sm mb-4"></div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Đăng nhập
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessageDiv = document.getElementById('error-message');
+            errorMessageDiv.textContent = '';
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ TenDangNhap: username, MatKhau: password })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || 'Đăng nhập thất bại');
+                }
+
+                const data = await response.json();
+                sessionStorage.setItem('authToken', data.token);
+                sessionStorage.setItem('userRole', data.vaiTro);
+                sessionStorage.setItem('actorId', data.actorId);
+                sessionStorage.setItem('userName', data.hoTen);
+
+                switch (data.vaiTro.toLowerCase()) {
+                    case 'admin':
+                        window.location.href = '/admin.html';
+                        break;
+                    case 'giangvien':
+                        window.location.href = '/giangvien.html';
+                        break;
+                    case 'sinhvien':
+                        window.location.href = '/sinhvien.html';
+                        break;
+                    default:
+                        throw new Error('Vai trò không xác định.');
+                }
+
+            } catch (error) {
+                errorMessageDiv.textContent = error.message;
+            }
+        });
+    </script>
+</body>
+</html>

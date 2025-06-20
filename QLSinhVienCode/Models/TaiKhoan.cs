@@ -1,17 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QLSinhVienCode.Models;
-
-public partial class TaiKhoan
+namespace QLSinhVienCode.Models
 {
-    public string TenDangNhap { get; set; } = null!;
+    [Table("TaiKhoan")]
+    public class TaiKhoan
+    {
+        [Key]
+        [Column("TenDangNhap")]
+        [StringLength(50)]
+        public string TenDangNhap { get; set; }
 
-    public string MatKhau { get; set; } = null!;
+        [Required]
+        [Column("MatKhau")]
+        [StringLength(100)]
+        public string MatKhau { get; set; }
 
-    public string VaiTro { get; set; } = null!;
-
-    public virtual ICollection<GiangVien> GiangViens { get; set; } = new List<GiangVien>();
-
-    public virtual ICollection<SinhVien> SinhViens { get; set; } = new List<SinhVien>();
+        [Required]
+        [Column("VaiTro")]
+        [StringLength(20)]
+        public string VaiTro { get; set; }
+    }
 }
