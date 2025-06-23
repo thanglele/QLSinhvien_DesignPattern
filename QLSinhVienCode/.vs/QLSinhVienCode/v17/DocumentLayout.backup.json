@@ -1,42 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\",
+  "WorkspaceRootPath": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\giangvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\sinhvien.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\adapter\\legacysystemadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\adapter\\legacysystemadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:wwwroot\\admin.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\observer\\gradeobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\observer\\gradeobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:controllers\\sinhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\controllers\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:controllers\\giangviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\services\\sinhvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:services\\sinhvienservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\dtos\\monhoccreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:dtos\\monhoccreateupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|d:\\onedrive - thanglele\\data-learning\\qlsinhvien\\qlsinhviencode\\dtos\\diemchitietdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:dtos\\diemchitietdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\models\\bangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:models\\bangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,124 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-20T12:32:05.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SinhVienController.cs",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\SinhVienController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SinhVienController.cs",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\SinhVienController.cs",
-              "RelativeToolTip": "Controllers\\SinhVienController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:07:06.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:06:33.971Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SinhVienService.cs",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Services\\SinhVienService.cs",
-              "RelativeDocumentMoniker": "Services\\SinhVienService.cs",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\Services\\SinhVienService.cs",
-              "RelativeToolTip": "Services\\SinhVienService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:05:41.392Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MonHocCreateUpdateDTO.cs",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\MonHocCreateUpdateDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\MonHocCreateUpdateDTO.cs",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\MonHocCreateUpdateDTO.cs",
-              "RelativeToolTip": "DTOs\\MonHocCreateUpdateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:05:11.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DiemChiTietDTO.cs",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\DiemChiTietDTO.cs",
-              "RelativeDocumentMoniker": "DTOs\\DiemChiTietDTO.cs",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\DTOs\\DiemChiTietDTO.cs",
-              "RelativeToolTip": "DTOs\\DiemChiTietDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-20T12:04:53.094Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "sinhvien.html",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\sinhvien.html",
-              "RelativeDocumentMoniker": "wwwroot\\sinhvien.html",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\sinhvien.html",
-              "RelativeToolTip": "wwwroot\\sinhvien.html",
-              "ViewState": "AgIAADkAAAAAAAAAAAAkwGEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-20T11:47:23.665Z",
+              "Title": "LegacySystemAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Adapter\\LegacySystemAdapter.cs",
+              "RelativeDocumentMoniker": "Patterns\\Adapter\\LegacySystemAdapter.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Adapter\\LegacySystemAdapter.cs*",
+              "RelativeToolTip": "Patterns\\Adapter\\LegacySystemAdapter.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T06:07:32.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "giangvien.html",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\giangvien.html",
-              "RelativeDocumentMoniker": "wwwroot\\giangvien.html",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\giangvien.html*",
-              "RelativeToolTip": "wwwroot\\giangvien.html*",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAkwMwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-20T11:47:10.444Z",
+              "Title": "MonHocBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Builder\\MonHocBuilder.cs",
+              "RelativeDocumentMoniker": "Patterns\\Builder\\MonHocBuilder.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Builder\\MonHocBuilder.cs*",
+              "RelativeToolTip": "Patterns\\Builder\\MonHocBuilder.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T06:07:02.832Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T04:09:41.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BangDiem.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Models\\BangDiem.cs",
+              "RelativeDocumentMoniker": "Models\\BangDiem.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Models\\BangDiem.cs",
+              "RelativeToolTip": "Models\\BangDiem.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T04:02:43.542Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "admin.html",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\admin.html",
-              "RelativeDocumentMoniker": "wwwroot\\admin.html",
-              "ToolTip": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhVienCode\\wwwroot\\admin.html",
-              "RelativeToolTip": "wwwroot\\admin.html",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAkwL4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-06-20T11:46:58.476Z",
+              "Title": "GradeObserver.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Observer\\GradeObserver.cs",
+              "RelativeDocumentMoniker": "Patterns\\Observer\\GradeObserver.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Observer\\GradeObserver.cs",
+              "RelativeToolTip": "Patterns\\Observer\\GradeObserver.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T03:55:44.492Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GiangVienController.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Controllers\\GiangVienController.cs",
+              "RelativeDocumentMoniker": "Controllers\\GiangVienController.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Controllers\\GiangVienController.cs",
+              "RelativeToolTip": "Controllers\\GiangVienController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T02:49:36.795Z"
             }
           ]
         }

@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhvvienDB\\",
+  "WorkspaceRootPath": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhvvienDB\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhvvienDB\\InitData.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
-      "RelativeMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|solutionrelative:InitData.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+      "AbsoluteMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhvvienDB\\InitDB.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|solutionrelative:InitDB.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhvvienDB\\InitDB.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
-      "RelativeMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|solutionrelative:InitDB.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+      "AbsoluteMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhvvienDB\\InitData.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{3F8F76D5-912A-139E-DE8C-9987DCAAFB90}|QLSinhvvienDB.ssmssqlproj|solutionrelative:InitData.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InitData.sql - server.thanglele.cloud.QLSinhVien (sa (53))",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhvvienDB\\InitData.sql",
+              "DocumentIndex": 1,
+              "Title": "InitData.sql - 26.64.110.24.master (sa (52))",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhvvienDB\\InitData.sql",
               "RelativeDocumentMoniker": "InitData.sql",
-              "ToolTip": "InitData.sql - server.thanglele.cloud.QLSinhVien (sa (53))",
+              "ToolTip": "InitData.sql - 26.64.110.24.master (sa (52))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2025-06-19T18:16:33.325Z",
-              "EditorCaption": " - server.thanglele.cloud.QLSinhVien (sa (53))"
+              "EditorCaption": " - 26.64.110.24.master (sa (52))"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InitDB.sql - server.thanglele.cloud.QLSinhVien (sa (53))",
-              "DocumentMoniker": "D:\\OneDrive - Thanglele\\DATA-LEARNING\\QLSinhvien\\QLSinhvvienDB\\InitDB.sql",
+              "DocumentIndex": 0,
+              "Title": "InitDB.sql - 26.64.110.24.master (sa (53))",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhvvienDB\\InitDB.sql",
               "RelativeDocumentMoniker": "InitDB.sql",
-              "ToolTip": "InitDB.sql - server.thanglele.cloud.QLSinhVien (sa (53))",
+              "ToolTip": "InitDB.sql - 26.64.110.24.master (sa (53))",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2025-06-19T16:54:35.984Z",
-              "EditorCaption": " - server.thanglele.cloud.QLSinhVien (sa (53))"
+              "EditorCaption": " - 26.64.110.24.master (sa (53))"
             }
           ]
         }

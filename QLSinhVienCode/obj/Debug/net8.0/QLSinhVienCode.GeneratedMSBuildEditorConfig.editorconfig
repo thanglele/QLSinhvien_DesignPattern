@@ -9,25 +9,25 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QLSinhVienCode
 build_property.RootNamespace = QLSinhVienCode
-build_property.ProjectDir = D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode\
+build_property.ProjectDir = C:\Users\lesyt\Downloads\QLSinhvien_DesignPattern\QLSinhVienCode\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\OneDrive - Thanglele\DATA-LEARNING\QLSinhvien\QLSinhVienCode
+build_property.MSBuildProjectDirectory = C:\Users\lesyt\Downloads\QLSinhvien_DesignPattern\QLSinhVienCode
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/OneDrive - Thanglele/DATA-LEARNING/QLSinhvien/QLSinhVienCode/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/lesyt/Downloads/QLSinhvien_DesignPattern/QLSinhVienCode/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/OneDrive - Thanglele/DATA-LEARNING/QLSinhvien/QLSinhVienCode/Views/_ViewImports.cshtml]
+[C:/Users/lesyt/Downloads/QLSinhvien_DesignPattern/QLSinhVienCode/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/OneDrive - Thanglele/DATA-LEARNING/QLSinhvien/QLSinhVienCode/Views/_ViewStart.cshtml]
+[C:/Users/lesyt/Downloads/QLSinhvien_DesignPattern/QLSinhVienCode/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

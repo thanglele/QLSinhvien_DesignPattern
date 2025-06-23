@@ -1,5 +1,12 @@
+-- 1. T?o SQL Login trên server
+CREATE LOGIN application WITH PASSWORD = '@pplication12345@@';
+
+-- 2. Gán quy?n sysadmin (toàn quy?n trên server)
+ALTER SERVER ROLE sysadmin ADD MEMBER application;
+
+
 --CREATE DATABASE QLSinhVien
---Use QLSinhVien
+Use QLSinhVien
 
 -- B?ng tài kho?n
 CREATE TABLE TaiKhoan (
@@ -61,12 +68,3 @@ CREATE TABLE BangDiem (
     FOREIGN KEY (MaSV) REFERENCES SinhVien(MaSV),
     FOREIGN KEY (MaMon) REFERENCES MonHoc(MaMon)
 );
-INSERT INTO TaiKhoan VALUES ('admin', '123456', 'Admin');
-
-INSERT INTO Khoa VALUES ('CNTT', N'Công ngh? thông tin');
-
-INSERT INTO GiangVien (MaGV, HoTen, BoMon, Email, SoDienThoai, TenDangNhap)
-VALUES ('GV001', N'Tr?n V?n A', N'Công ngh? ph?n m?m', 'gv001@tlu.edu.vn', '0123456789', NULL);
-
-INSERT INTO MonHoc (MaMon, TenMon, SoTinChi, HocKy, LoaiMonHoc, SoTiet, MaKhoa, MaGV)
-VALUES ('MH001', N'C?u trúc d? li?u', 3, 2, N'B?t bu?c', 45, 'CNTT', 'GV001');

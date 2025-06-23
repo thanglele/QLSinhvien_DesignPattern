@@ -3,7 +3,11 @@
 namespace QLSinhVienCode.Patterns.Adapter
 {
     // Dữ liệu từ hệ thống cũ
-    public class LegacyStudent { public string StudentID; public string FullName; }
+    public class LegacyStudent 
+    { 
+        public string StudentID; 
+        public string FullName; 
+    }
     // Adapter: Chuyển đổi dữ liệu từ hệ thống cũ sang hệ thống mới.
     public class LegacyStudentAdapter
     {
