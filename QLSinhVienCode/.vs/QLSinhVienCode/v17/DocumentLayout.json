@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\factory\\reportfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\factory\\reportfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\singleton\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\singleton\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\adapter\\legacysystemadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\adapter\\legacysystemadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|c:\\users\\lesyt\\downloads\\qlsinhvien_designpattern\\qlsinhviencode\\patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F497A1A0-474E-4294-A4CD-B6750C50BE1C}|QLSinhVienCode.csproj|solutionrelative:patterns\\builder\\monhocbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAqwCgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T08:59:00.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FileLogger.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Singleton\\FileLogger.cs",
+              "RelativeDocumentMoniker": "Patterns\\Singleton\\FileLogger.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Singleton\\FileLogger.cs",
+              "RelativeToolTip": "Patterns\\Singleton\\FileLogger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T08:56:03.645Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReportFactory.cs",
+              "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Factory\\ReportFactory.cs",
+              "RelativeDocumentMoniker": "Patterns\\Factory\\ReportFactory.cs",
+              "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Factory\\ReportFactory.cs",
+              "RelativeToolTip": "Patterns\\Factory\\ReportFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T08:34:32.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LegacySystemAdapter.cs",
               "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Adapter\\LegacySystemAdapter.cs",
               "RelativeDocumentMoniker": "Patterns\\Adapter\\LegacySystemAdapter.cs",
               "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Adapter\\LegacySystemAdapter.cs",
               "RelativeToolTip": "Patterns\\Adapter\\LegacySystemAdapter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T06:07:32.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T06:07:32.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MonHocBuilder.cs",
               "DocumentMoniker": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Builder\\MonHocBuilder.cs",
               "RelativeDocumentMoniker": "Patterns\\Builder\\MonHocBuilder.cs",
               "ToolTip": "C:\\Users\\lesyt\\Downloads\\QLSinhvien_DesignPattern\\QLSinhVienCode\\Patterns\\Builder\\MonHocBuilder.cs",
               "RelativeToolTip": "Patterns\\Builder\\MonHocBuilder.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA4wAoAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-23T06:07:02.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-23T06:07:02.832Z"
             }
           ]
         }
